@@ -1,4 +1,7 @@
-﻿using System;
+﻿/**
+ * Walking Timer Copyright 2022 Justin Lloyd
+ **/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
