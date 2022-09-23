@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkingTimer", "WalkingTimer.csproj", "{84927516-4D13-4AD7-9F76-A60CD7AE97E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84927516-4D13-4AD7-9F76-A60CD7AE97E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84927516-4D13-4AD7-9F76-A60CD7AE97E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84927516-4D13-4AD7-9F76-A60CD7AE97E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84927516-4D13-4AD7-9F76-A60CD7AE97E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A395D5B2-31E4-4F77-B7F3-E60961291C67}
+	EndGlobalSection
+EndGlobal
