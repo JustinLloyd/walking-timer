@@ -45,6 +45,9 @@ namespace WalkingTimer
 
             m_startTime = m_stopTime = GetNow();
             m_sessionElapsedTime = TimeSpan.Zero;
+            m_walkingLog.GetActiveDayLog().GetActiveSessionLog().duration = m_sessionElapsedTime;
+            SaveWalkingLog();
+            buttonEndSession.Enabled = false;
             UpdateOnScreenTime();
             UpdateOnScreenLaps();
         }
@@ -71,6 +74,11 @@ namespace WalkingTimer
             buttonEndOfDay.Enabled = false;
             buttonEndSession.Enabled = false;
             buttonReset.Enabled = false;
+            if (m_totalElapsedTime > TimeSpan.Zero)
+            {
+                buttonEndOfDay.Enabled = true;
+            }
+
             UpdateOnScreenTime();
             UpdateOnScreenLaps();
         }
@@ -192,6 +200,7 @@ namespace WalkingTimer
             SaveWalkingLog();
 
             m_sessionElapsedTime = TimeSpan.Zero;
+            buttonReset.Enabled = false;
             UpdateOnScreenTime();
             UpdateOnScreenLaps();
             buttonEndSession.Enabled = false;
@@ -215,6 +224,7 @@ namespace WalkingTimer
             SaveWalkingLog();
 
             m_sessionElapsedTime = TimeSpan.Zero;
+            m_totalElapsedTime = TimeSpan.Zero;
             UpdateOnScreenTime();
             UpdateOnScreenLaps();
             buttonEndOfDay.Enabled = false;
@@ -230,12 +240,17 @@ namespace WalkingTimer
                 return;
             }
 
+            if (new FileInfo(@".\walking_log.json").Length == 0)
+            {
+                return;
+            }
+
             m_walkingLog = JsonConvert.DeserializeObject<WalkingLog>(File.ReadAllText(@".\walking_log.json"));
         }
 
         private void SaveWalkingLog()
         {
-            string v = JsonConvert.SerializeObject(m_walkingLog);
+            string v = JsonConvert.SerializeObject(m_walkingLog, Formatting.Indented);
             File.WriteAllText(@".\walking_log.json", v);
         }
     }
